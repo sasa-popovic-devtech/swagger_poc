@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CommercialEntity index{% endblock %}
+
+{% block body %}
+    <h1>CommercialEntity index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Success</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commercial_entity in commercial_entities %}
+            <tr>
+                <td>{{ commercial_entity.id }}</td>
+                <td>{{ commercial_entity.name }}</td>
+                <td>{{ commercial_entity.type }}</td>
+                <td>{{ commercial_entity.success ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('commercial_entity_show', {'id': commercial_entity.id}) }}">show</a>
+                    <a href="{{ path('commercial_entity_edit', {'id': commercial_entity.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('commercial_entity_new') }}">Create new</a>
+{% endblock %}

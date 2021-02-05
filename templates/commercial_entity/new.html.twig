@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New CommercialEntity{% endblock %}
+
+{% block body %}
+    <h1>Create new CommercialEntity</h1>
+
+    {{ include('commercial_entity/_form.html.twig') }}
+
+    <a href="{{ path('commercial_entity_index') }}">back to list</a>
+{% endblock %}

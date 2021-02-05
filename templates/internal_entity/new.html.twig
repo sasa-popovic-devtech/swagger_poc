@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New InternalEntity{% endblock %}
+
+{% block body %}
+    <h1>Create new InternalEntity</h1>
+
+    {{ include('internal_entity/_form.html.twig') }}
+
+    <a href="{{ path('internal_entity_index') }}">back to list</a>
+{% endblock %}
